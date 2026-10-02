@@ -82,14 +82,15 @@ Linear SVM is used to classify the TF-IDF feature representation of the news art
 
 ---
 
+````markdown
 ## 📊 Dataset
 
 The current TruthLens dataset contains:
 
-- **631 news records**
-- **331 Real**
-- **300 Fake**
-- **11 news categories**
+- **1,000 news records**
+- **516 Real**
+- **484 Fake**
+- **10 news categories**
 
 The dataset contains the following fields:
 
@@ -102,7 +103,7 @@ source
 date
 label
 verification_source
-```
+````
 
 The `verification_source` field is used as reference/audit information and is not used as a model input feature.
 
@@ -127,13 +128,22 @@ The `verification_source` field is used as reference/audit information and is no
 TruthLens/
 │
 ├── data/
-├── model/
-├── notebooks/
-├── venv/
+│   └── truthlens_1000_final.csv
 │
-├── train.py
+├── model/
+│   ├── logistic_regression_model_1000.pkl
+│   ├── naive_bayes_model_1000.pkl
+│   ├── svm_model_1000.pkl
+│   ├── tfidf_vectorizer_1000.pkl
+│   ├── model_performance_1000.csv
+│   ├── logistic_regression_confusion_matrix_1000.csv
+│   ├── naive_bayes_confusion_matrix_1000.csv
+│   └── svm_confusion_matrix_1000.csv
+│
 ├── app.py
+├── train.py
 ├── requirements.txt
+├── .gitignore
 └── README.md
 ```
 
@@ -144,7 +154,7 @@ TruthLens/
 ### 1. Clone the repository
 
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
+git clone https://github.com/akshithaponde-akshi/TruthLens.git
 ```
 
 ### 2. Open the project folder
@@ -189,13 +199,13 @@ The application will open in your browser.
 
 ## 📊 Model Performance
 
-The models were evaluated on a held-out test set of **127 records**.
+The models were evaluated on a held-out test set of **200 records**.
 
 | Model | Accuracy | Precision | Recall | F1 Score |
 |---|---:|---:|---:|---:|
 | Logistic Regression | 100.00% | 100.00% | 100.00% | 100.00% |
-| Naive Bayes | 97.64% | 100.00% | 95.52% | 97.71% |
-| SVM | 99.21% | 98.53% | 100.00% | 99.26% |
+| Naive Bayes | 98.50% | 100.00% | 97.09% | 98.52% |
+| SVM | 99.50% | 99.04% | 100.00% | 99.52% |
 
 > These results are based on the project's current dataset and held-out test split. They should not be interpreted as proof of real-world fact-checking accuracy.
 
@@ -242,6 +252,14 @@ The application keeps track of predictions made during the current session.
 
 ---
 
+## 🌐 Deployment
+
+TruthLens is deployed using Streamlit Community Cloud.
+
+👉 [Open the Live Application](https://truthlens-fakenews.streamlit.app/)
+
+---
+
 ## ⚠️ Limitations
 
 TruthLens has several limitations:
@@ -266,7 +284,6 @@ Possible future improvements include:
 - Using transformer-based models such as BERT
 - Adding explainable AI techniques
 - Adding external fact-checking sources
-- Deploying the application online
 - Improving confidence calibration
 
 ---
