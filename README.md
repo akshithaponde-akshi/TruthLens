@@ -2,6 +2,10 @@
 
 ### See Beyond the Headlines
 
+## 🚀 Live Demo
+
+👉 [Try TruthLens Live](https://truthlens-fakenews.streamlit.app/)
+
 TruthLens is a Machine Learning based Fake News Detection System that classifies a news article as **Real** or **Fake** using Natural Language Processing (NLP) and Machine Learning techniques.
 
 > ⚠️ Educational Project: TruthLens makes predictions based on patterns learned from its training dataset. A prediction is not proof that a news article is factually true or false.
