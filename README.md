@@ -82,7 +82,6 @@ Linear SVM is used to classify the TF-IDF feature representation of the news art
 
 ---
 
-````markdown
 ## 📊 Dataset
 
 The current TruthLens dataset contains:
@@ -103,7 +102,7 @@ source
 date
 label
 verification_source
-````
+```
 
 The `verification_source` field is used as reference/audit information and is not used as a model input feature.
 
